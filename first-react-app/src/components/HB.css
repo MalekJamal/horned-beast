@@ -1,0 +1,23 @@
+p {
+  border: 1px solid;
+  margin: 0;
+  border-radius: 19px;
+}
+
+img {
+  border-radius: 19px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.9s;
+  background: aliceblue;
+  width: 30%;
+  margin-left: 35%;
+  justify-content: center;
+  border-radius: 19px;
+}
+
+.card:hover {
+  box-shadow: 0 15px 18px 0 rgb(0, 0, 0);
+}
