@@ -1,10 +1,10 @@
 import React from "react";
-
+import NavBar from "./NavBar";
 class Header extends React.Component{
     render(){
         return(
             <div>
-                <h1>Horned Beast</h1>
+                <NavBar/>
             </div>
         );
     }

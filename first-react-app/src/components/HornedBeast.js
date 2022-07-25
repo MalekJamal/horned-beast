@@ -1,18 +1,38 @@
 import React from "react";
-import './HB.css';
+import Card from "react-bootstrap/Card";
+import "./HB.css";
 class HornedBeast extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      clickCounter: 0,
+    };
+  }
+  handleClick = () => {
+    this.setState({
+      clickCounter: this.state.clickCounter + 1,
+    });
+  };
   render() {
     return (
-    <div className="cont">
-       <h2>{this.props.title}</h2>
-       <div className="card"> 
-       <img src={this.props.imageUrl} alt={this.props.title} 
-       title={this.props.title} width="200px"/>
-       <div>
-       <p>{this.props.description}</p> 
-       </div>
-       </div>
-    </div>
+      <Card style={{ width: "18rem" }}>
+        <Card.Img
+          variant="top"
+          src={this.props.imageUrl}
+          alt={this.props.title}
+          title={this.props.title}
+          onClick={this.handleClick}
+        />
+        <Card.Body>
+          <Card.Text>
+            <strong>❤</strong>
+            <strong id="dis">{this.state.clickCounter}</strong>
+          </Card.Text>
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text>{this.props.description}</Card.Text>
+        </Card.Body>
+      </Card>
     );
   }
 }
