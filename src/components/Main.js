@@ -1,25 +1,31 @@
 import React from "react";
 import HornedBeast from "./HornedBeast";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Data from "../json/data";
+import SelectedBeast from "./SelectedBeast";
+
 class Main extends React.Component {
+
+  malek=(a)=>{
+
+  }
   render() {
     return (
-      <Row xs={1} md={3} className="g-4">
-        {Data.map((item, id) => {
-          return (
-            <Col Key={id}>
+      <>
               <HornedBeast
-                title={item.title}
-                imageUrl={item.image_url}
-                description={item.description}
-                Key={id}
+                title={this.props.title}
+                imageUrl={this.props.imageUrl}
+                description={this.props.description}
+                Key={this.props._id}
               />
-            </Col>
-          );
-        })}
-      </Row>
+
+              <SelectedBeast
+              title={this.props.title}
+              imageUrl={this.props.imageUrl}
+              description={this.props.description}
+              Key={this.props._id}
+              method={this.malek}
+              />
+              
+          </>
     );
   }
 }

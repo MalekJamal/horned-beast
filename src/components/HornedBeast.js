@@ -23,6 +23,7 @@ class HornedBeast extends React.Component {
           alt={this.props.title}
           title={this.props.title}
           onClick={this.handleClick}
+         
         />
         <Card.Body>
           <Card.Text>
