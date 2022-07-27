@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Data from '../json/data.json';
+
 
 class SelectedBeast extends React.Component {
   constructor(props) {
@@ -25,21 +25,19 @@ class SelectedBeast extends React.Component {
   render() {
     return (
       <>
-    
-        <Button variant="primary" onClick={() => this.handleShow()}>
-            Open
-        </Button>
-
-        <Modal show={this.state.show} onHide={() => this.handleClose()}>
+        <Modal show={this.props.show} onHide={this.props.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.title}</Modal.Title>
+            <Modal.Title>{this.props.selectedBeast.title}</Modal.Title>
           </Modal.Header>
-          <Modal.Body><img src={this.props.imageUrl} width={200}/>
-          <Modal.Body>{this.props.description}</Modal.Body>
-          </Modal.Body>
-          <Modal.Footer>
+          <Modal.Body>
+            
+          <img src={this.props.selectedBeast.image_url} width={"100%"} 
+          alt={this.props.selectedBeast.title}/><br></br>
+          {this.props.selectedBeast.description}
           
-            <Button variant="secondary" onClick={() => this.handleClose()}>
+          </Modal.Body>
+          <Modal.Footer>   
+            <Button variant="secondary" onClick={this.props.handleClose}>
               Close
             </Button>
           </Modal.Footer>

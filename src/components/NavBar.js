@@ -2,6 +2,8 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 class NavBar extends React.Component {
   render() {
@@ -16,6 +18,15 @@ class NavBar extends React.Component {
               <Nav.Link href="#about">About</Nav.Link>
             </Nav>
             <Nav.Link href="#about">About</Nav.Link>
+            <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="dark">Search</Button>
+          </Form>
           </Navbar.Collapse>
         </Container>
       </Navbar>
