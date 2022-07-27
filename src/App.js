@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Data from '../src/json/data.json';
 import SelectedBeast from '../src/components/SelectedBeast';
 import React from 'react';
+import FormFilter from './components/FormFilter';
 
 
 class App extends React.Component{
@@ -38,7 +39,7 @@ class App extends React.Component{
     return (
       <div className="App">
         <Header/>
-      
+      <FormFilter/>
        <Main allBeast={this.state.allBeast} displayModal={this.displayModal}/>
 
        <SelectedBeast show={this.state.showModal} handleClose={this.handleClose} 
