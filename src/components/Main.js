@@ -1,33 +1,34 @@
 import React from "react";
 import HornedBeast from "./HornedBeast";
-import SelectedBeast from "./SelectedBeast";
-
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 class Main extends React.Component {
-
-  malek=(a)=>{
-
-  }
   render() {
     return (
-      <>
-              <HornedBeast
-                title={this.props.title}
-                imageUrl={this.props.imageUrl}
-                description={this.props.description}
-                Key={this.props._id}
-              />
+      <>       
+          <Row xs={1} md={4} className="g-4">
+          {
+          this.props.allBeast.map((item, id) => {
+            
 
-              <SelectedBeast
-              title={this.props.title}
-              imageUrl={this.props.imageUrl}
-              description={this.props.description}
-              Key={this.props._id}
-              method={this.malek}
-              />
-              
-          </>
+              return (
+                <Col key={id}>
+                  <HornedBeast
+                    title={item.title}
+                    imageUrl={item.image_url}
+                    description={item.description}
+                    key={id}
+                    displayModal={this.props.displayModal}
+                    data={item}
+                  />
+                </Col>
+              );
+           
+           
+          })}
+        </Row>         
+      </>
     );
   }
 }
-
 export default Main;
