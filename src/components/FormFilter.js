@@ -1,19 +1,28 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
+import Button from 'react-bootstrap/Button';
 import './FormFilter.css'
 class FormFilter extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={
+            showBeasts:0
+        }
+    }
+    handleSubmit=(e)=>{
+        e.preventDefault();
+        this.setState({
+            showBeasts: e.target.horendSelected.value
+        })
+        
+        console.log(e.target.horendSelected.value)
+    }
   render() {
     return (
       <>
        
-        <Form.Group className="mb-5 center">
-          <Form.Label>Select Numbers Of Hornes</Form.Label>
-          <Form.Select className="select">
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
-          </Form.Select>
-        </Form.Group>
+       
+        
         
       </>
     );
